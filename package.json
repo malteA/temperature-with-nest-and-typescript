@@ -1,0 +1,22 @@
+{
+  "name": "temperature-with-nest-and-typescript",
+  "version": "1.0.0",
+  "description": "It's our basic temperature service.",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maninywa/temperature-with-nest-and-typescript.git"
+  },
+  "author": "Nicolas Wazulek, Manh Phuoc Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maninywa/temperature-with-nest-and-typescript/issues"
+  },
+  "homepage": "https://github.com/maninywa/temperature-with-nest-and-typescript#readme",
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}
