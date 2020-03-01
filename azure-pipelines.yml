@@ -1,0 +1,44 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: dockerbuild
+    displayName: "Build Docker Image"
+    jobs:
+      - job: createApiKeyConfig
+        displayName: "Create API Key config"
+        steps:
+        - task: Bash@3
+          inputs:
+            targetType: 'inline'
+            script: 'echo export default { key: ''$APIKEY'' } >> src/config/api-key.ts'
+      - job: runDockerBuild
+        displayName: "Run Docker Build"
+        steps:
+        - task: Docker@2
+          inputs:
+            command: 'build'
+            Dockerfile: '**/Dockerfile'
+            tags: |
+              niwadev/weather-api-nest
+              tag2
+  - stage: publish
+    displayName: "Publish Docker Image"
+    jobs:
+      - job: publishArtefact
+        displayName: "Publish Artefact"
+        steps:
+          - task: Docker@2
+            inputs:
+              containerRegistry: 'Nicos Docker Hub Account'
+              repository: 'niwadev/weather-api-nest'
+              command: 'push'
+
