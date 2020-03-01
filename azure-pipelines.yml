@@ -32,5 +32,5 @@ stages:
             Dockerfile: '**/Dockerfile'
             tags: |
               $(Build.BuildNumber)
-              $(Variables.VersionTag)
+              $env:VERSIONTAG
 
