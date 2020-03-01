@@ -26,21 +26,8 @@ stages:
         steps:
         - task: Docker@2
           inputs:
-            command: 'build'
+            containerRegistry: 'Nicos Docker Hub Account'
+            repository: 'niwadev/weather-api-nest'
+            command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
-            tags: |
-              niwadev/weather-api-nest
-              tag2
-  - stage: publish
-    displayName: "Publish Docker Image"
-    dependsOn: dockerbuild
-    jobs:
-      - job: publishArtefact
-        displayName: "Publish Artefact"
-        steps:
-          - task: Docker@2
-            inputs:
-              containerRegistry: 'Nicos Docker Hub Account'
-              repository: 'niwadev/weather-api-nest'
-              command: 'push'
 
