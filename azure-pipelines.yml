@@ -31,6 +31,5 @@ stages:
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
             tags: |
-              $(version)
-              latest
+              $(Build.BuildNumber)
 
