@@ -30,4 +30,7 @@ stages:
             repository: 'niwadev/weather-api-nest'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
+            tags: |
+              $(version)
+              latest
 
