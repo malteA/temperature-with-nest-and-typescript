@@ -22,6 +22,7 @@ stages:
             script: 'echo export default { key: ''$APIKEY'' } >> src/config/api-key.ts'
       - job: runDockerBuild
         displayName: "Run Docker Build"
+        dependsOn: createApiKeyConfig
         steps:
         - task: Docker@2
           inputs:
@@ -32,6 +33,7 @@ stages:
               tag2
   - stage: publish
     displayName: "Publish Docker Image"
+    dependsOn: dockerbuild
     jobs:
       - job: publishArtefact
         displayName: "Publish Artefact"
