@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "109deba2-0b64-4184-bc8d-cc615de42254",
+		"name": "nestjs-temperature-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get current temperature by zip code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/temperature/de/86150",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"temperature",
+						"de",
+						"86150"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get current temperature by geographic coordinates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/temperature/coordinates?lat=52.504610&lon=13.440308",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"temperature",
+						"coordinates"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "52.504610"
+						},
+						{
+							"key": "lon",
+							"value": "13.440308"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "eaf7738d-b3af-48ab-8979-c995197427ad",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b8f305bf-ed3e-41f4-83c0-27a43eee1678",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "b875c6ef-3963-4db7-87e4-9d2bdab1c5e3",
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
