@@ -1,0 +1,20 @@
+# ignore postman files, node_modules
+node_modules
+_postman
+
+# ignore all old files
+*.old
+
+# ignore tests
+test
+
+# ignore local dist dir
+dist
+
+# ignore all git files/folders and cache folders
+.git
+.cache
+.gitignore
+
+# ignore debugger settings
+nodemon.json
