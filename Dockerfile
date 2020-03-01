@@ -2,7 +2,6 @@ FROM node:lts-alpine as builder
 WORKDIR /usr/src/temperature-api
 COPY package*.json ./
 RUN npm install
-#RUN echo "export default { key = 'xxxxxxxxxxxxxxxxxxxxxxxx' }" >> src/config/api-key.ts
 COPY . .
 RUN npm run build
 
