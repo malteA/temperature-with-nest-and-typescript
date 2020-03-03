@@ -57,6 +57,10 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
+# production mode with docker
+# will be forwarded to port 5000
+$ docker-compose up
 ```
 
 ## Debug the app in Visual Studio Code
